@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../style/logo.svg';
+import '../style/App.css';
+import StudentContainer from './StudentContainer'
+
+// import React from 'react'
+import Footer from '../components/Footer'
+import AddTodo from './AddTodo'
+import VisibleTodoList from './VisibleTodoList'
 
 class App extends Component {
   render() {
@@ -11,7 +17,9 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <AddTodo />
+          <VisibleTodoList />
+          <Footer />
         </p>
       </div>
     );
