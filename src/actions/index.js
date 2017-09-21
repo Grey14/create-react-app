@@ -8,36 +8,16 @@ export const getAllStudents= ()=>{
   }
 }
 
-// const receiveStudents = students => ({
-//   type: types.RECEIVE_STUDENTS,
-//   students: students
-// })
-
-// export const getAllStudents = () => dispatch => {
-//   person.getStudents(students => {
-//     dispatch(receiveStudents(students))
-//   })
-// }
-
-let nextTodoId = 0
-export const addTodo = (text) => {
+export const clearStudents= ()=>{
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+    type: types.CLEAR_STUDENTS
   }
 }
 
-export const setVisibilityFilter = (filter) => {
+export const filterStudents= (filterKey)=>{
   return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
-  }
-}
-
-export const toggleTodo = (id) => {
-  return {
-    type: 'TOGGLE_TODO',
-    id
+    type: types.FILTER_STUDENTS,
+    filterKey,
+    students: _students
   }
 }

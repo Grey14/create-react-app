@@ -6,13 +6,9 @@
 // })
 
 import { combineReducers } from 'redux'
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
 import students from './students'
 
 const reducerApp = combineReducers({
-  todos,
-  visibilityFilter,
   students
 })
 
