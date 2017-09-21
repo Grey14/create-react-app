@@ -24,7 +24,7 @@ const StudentContainer = ({ students, getAllStudents }) => (
 // 準備綁定用的mapStateToProps方法，
 // 將store中的students屬性綁到這個元件的props.students屬性上
 const mapStateToProps = state => ({
-    students: getAllStudents()
+    students:state.students
 })
 
 export default connect(mapStateToProps, { getAllStudents })(StudentContainer)

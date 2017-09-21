@@ -9,24 +9,25 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 // reducers可以一次匯入用解構的組合
 import reducer from './reducers'
 import { getAllStudents } from './actions/index'
-import thunk from 'redux-thunk'
-import { createLogger } from 'redux-logger'
-const middleware = [ thunk ];
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
+// import thunk from 'redux-thunk'
+// import { createLogger } from 'redux-logger'
+// const middleware = [ thunk ];
+// if (process.env.NODE_ENV !== 'production') {
+//   middleware.push(createLogger());
+// }
 
 // @Store
-//
-// store = createStore(reducer)
+// store = createStore(reducer);
 // 使用redux dev tools
-// 如果要正常使用是使用 const store = createStore(studentReducer)
-// const store = createStore(studentReducer,
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-const store = createStore(
-    reducer,
-    applyMiddleware(...middleware)
-  )
+// 如果要正常使用是使用 const store = createStore(reducer);
+// const store = createStore(reducer,
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+// const store = createStore(
+//     reducer,
+//     applyMiddleware(...middleware)
+//   )
+const store = createStore(reducer);
+// 一開始給值
 store.dispatch(getAllStudents());
 
 ReactDOM.render(

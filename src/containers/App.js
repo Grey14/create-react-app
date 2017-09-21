@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Container } from 'reactstrap';
 import logo from '../style/logo.svg';
 import '../style/App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import StudentContainer from './StudentContainer'
 
 // import React from 'react'
@@ -16,11 +18,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          <AddTodo />
-          <VisibleTodoList />
-          <Footer />
-        </p>
+        <div className="App-intro">
+          <Container>
+            <AddTodo />
+            <VisibleTodoList />
+            <Footer />
+            <StudentContainer />
+          </Container>
+        </div>
       </div>
     );
   }
