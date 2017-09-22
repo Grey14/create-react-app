@@ -13,11 +13,8 @@ const students = (state = [], action) => {
         case RECEIVE_STUDENTS:
             return action.students;
         case FILTER_STUDENTS:
-            {
-                console.log(action);
-                //console.log(action.students.filter(row => Object.keys(row).some(key => String(row[key]).toLowerCase().indexOf(action.filterKey) > -1)));
-                return [...action.students.filter(r=>r.Name==="Zhang Xiaochun")]
-            }
+            console.log(action.filterKey);
+            return [...action.students.filter(row => Object.keys(row).some(key => String(row[key]).toLowerCase().indexOf(action.filterKey) > -1))]
         default:
             return state;
     }

@@ -12,10 +12,10 @@ const StudentContainer = ({ students, filterKey, getAllStudents, clearStudents, 
       </div>
         <div className="card-block">
             <DoActions
-                filterKey={filterKey}
+                //filterKey={filterKey}
                 getAllStudents={getAllStudents}
-                clearStudents={clearStudents} 
-                filterStudents={filterStudents}/>
+                clearStudents={clearStudents}
+                filterStudents={filterStudents} />
             <StudentList students={students} />
         </div>
     </div >
@@ -24,7 +24,7 @@ const StudentContainer = ({ students, filterKey, getAllStudents, clearStudents, 
 // 將store中的students屬性綁到這個元件的props.students屬性上
 const mapStateToProps = state => ({
     students: state.students,
-    filterKey: state.filterKey
+    //filterKey: state.filterKey
 })
 
 // 準備綁定用的DispatchToProps方法，

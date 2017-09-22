@@ -14,6 +14,7 @@ export const clearStudents= ()=>{
   }
 }
 
+//傳給Reducer 的 acion
 export const filterStudents= (filterKey)=>{
   return {
     type: types.FILTER_STUDENTS,
