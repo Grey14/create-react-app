@@ -1,17 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { onSelectChange } from '../actions/index'
+import { bindActionCreators } from 'redux'
+import { getAllDropdowns, onSelectChange } from '../actions/index'
 import DropdownList from '../components/DropdownList'
 import SelectedItem from '../components/SelectedItem'
 
-const DropdownContainer = ({dropdowns,selectedValue,onSelectChange}) => {
-    //console.log(dropdowns);
+const DropdownContainer = ({ dropdowns, selected, getAllDropdowns, onSelectChange }) => {
+    getAllDropdowns();
     return (
         <div>
             <DropdownList options={dropdowns}
                 onSelectChange={onSelectChange}>
             </DropdownList>
-            <SelectedItem selectedValue={selectedValue}>
+            <SelectedItem selectedValue={selected}>
             </SelectedItem>
         </div>
     )
@@ -20,8 +21,12 @@ const DropdownContainer = ({dropdowns,selectedValue,onSelectChange}) => {
 const mapStateToProps = (state) => {
     return {
         dropdowns: state.dropdowns,
-        selected:state.selected
+        selected: state.selected
     };
 };
 
-export default connect(mapStateToProps, { onSelectChange })(DropdownContainer)
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({ getAllDropdowns, onSelectChange }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(DropdownContainer)

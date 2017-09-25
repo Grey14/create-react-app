@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import logo from '../style/logo.svg';
 import '../style/App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-dropdown/style.css'

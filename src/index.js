@@ -5,14 +5,16 @@ import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
 import { Provider } from 'react-redux'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 // reducers可以一次匯入用解構的組合
+import thunk from 'redux-thunk'
 import reducer from './reducers'
-import { getAllDropdowns } from './actions/index'
 
-const store = createStore(reducer);
-// 一開始給值
-store.dispatch(getAllDropdowns());
+const middleware = [ thunk ];
+const store = createStore(
+  reducer,
+  applyMiddleware(...middleware)
+)
 
 ReactDOM.render(
     <Provider store={store}>
