@@ -1,24 +1,24 @@
-import person from '../api/person';
+import dropdown from '../api/dropdown';
 import * as types from '../constants/actionTypes';
-import _students from '../api/student.json';
-export const getAllStudents= ()=>{
-  return {
-    type: types.RECEIVE_STUDENTS,
-    students: _students
-  }
-}
+import _dropdown from '../api/data.json'
 
-export const clearStudents= ()=>{
-  return {
-    type: types.CLEAR_STUDENTS
-  }
-}
+const receiveDropdown = dropdowns => ({
+  type: types.RECEIVE_DROPDOWN,
+  dropdowns: dropdowns
+})
 
-//傳給Reducer 的 acion
-export const filterStudents= (filterKey)=>{
-  return {
-    type: types.FILTER_STUDENTS,
-    filterKey,
-    students: _students
-  }
-}
+// export const getAllDropdowns= ()=>dispatch=>{
+//   dropdown.getDropdown(dropdowns => {
+//     dispatch(receiveDropdown(dropdowns))
+//   })
+// }
+
+export const getAllDropdowns = dropdowns => ({
+  type: types.RECEIVE_DROPDOWN,
+  dropdowns: _dropdown
+})
+
+export const onSelectChange = selected => ({
+  type: types.ON_SELECTED,
+  selected
+})

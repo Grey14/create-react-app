@@ -3,7 +3,9 @@ import { Container } from 'reactstrap';
 import logo from '../style/logo.svg';
 import '../style/App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import StudentContainer from './StudentContainer'
+import 'react-dropdown/style.css'
+
+import DropdownContainer from './DropdownContainer'
 
 class App extends Component {
   render() {
@@ -14,8 +16,8 @@ class App extends Component {
         </div>
         <div className="App-intro">
           <Container>
-            <br/>
-            <StudentContainer />
+            <br />
+            <DropdownContainer></DropdownContainer>
           </Container>
         </div>
       </div>
