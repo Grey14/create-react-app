@@ -10,6 +10,7 @@ const DropdownContainer = ({ dropdowns, selected, getAllDropdowns, onSelectChang
     return (
         <div>
             <DropdownList options={dropdowns}
+                selected={selected}
                 onSelectChange={onSelectChange}>
             </DropdownList>
             <SelectedItem selectedValue={selected}>

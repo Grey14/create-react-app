@@ -13,12 +13,12 @@ class DropdownList extends Component {
     }
 
     render() {
-        const { options } = this.props;
+        const { options, selected } = this.props;
         return (
             <div>
                 <Dropdown options={options}
                     onChange={this._onSelect}
-                    // value={defaultOption}
+                    value={selected}
                     placeholder="Select an option" />
             </div>
         )
