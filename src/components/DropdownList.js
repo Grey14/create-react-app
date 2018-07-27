@@ -9,6 +9,7 @@ class DropdownList extends Component {
 
     _onSelect(option) {
         //const { onSelectChange } = this.props;
+        //setting label to selected of sate
         this.props.onSelectChange(option.label);
     }
 

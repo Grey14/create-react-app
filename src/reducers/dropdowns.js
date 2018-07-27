@@ -1,7 +1,8 @@
 import { RECEIVE_DROPDOWN } from '../constants/actionTypes';
 
 const dropdowns = (state = [], action) => {
-    //console.log(action.dropdowns);
+    // console.log(state);
+    // console.log(action);
     switch (action.type) {
         case RECEIVE_DROPDOWN:
             return action.dropdowns;

@@ -7,6 +7,7 @@ import SelectedItem from '../components/SelectedItem'
 
 class DropdownContainer extends Component {
     componentDidMount() {
+        //initial
         this.props.getAllDropdowns();
     }
 
@@ -25,6 +26,7 @@ class DropdownContainer extends Component {
     }
 }
 
+//setting state, refer to the reducerss folder
 const mapStateToProps = (state) => {
     return {
         dropdowns: state.dropdowns,
@@ -32,6 +34,7 @@ const mapStateToProps = (state) => {
     };
 };
 
+//setting method
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({ getAllDropdowns, onSelectChange }, dispatch)
 )
